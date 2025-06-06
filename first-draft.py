@@ -13,10 +13,10 @@ def call_option (S, K, T, r, sigma):
     return S * norm.cdf(d1(S, K, T, r, sigma)) - K * np.exp(-r * T) * norm.cdf(d2(S, K, T, r, sigma))
 
 def put_option(S, K, T, r, sigma):
-    return K * np.exp(-r * k) * norm.cdf(-d2(S, K, T, r, sigma)) - S - norm.cdf(d1(S, K, T, r, sigma))
+    return K * np.exp(-r * K) * norm.cdf(-d2(S, K, T, r, sigma)) - S - norm.cdf(d1(S, K, T, r, sigma))
 
 def Black_Scholes (S, K, T, r, sigma, option_type='call'):
     if option_type == 'call':
         return call_option(S, K, T, r, sigma)
     else:
-        retun put_option(S, K, T, r, sigma)
+        return put_option(S, K, T, r, sigma)
