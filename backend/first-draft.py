@@ -11,7 +11,7 @@ CORS(app)
 def home():
     return None 
 
-@app.route('black-scholes<int:option_type>', methods=['POST'])
+@app.route('/black-scholes<int:option_type>', methods=['POST'])
 def black_scholes(option_type):
     data = request.get_json()
     
